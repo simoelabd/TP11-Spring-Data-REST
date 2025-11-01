@@ -3,9 +3,7 @@ package ma.projet.entities;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Temporal;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import jakarta.persistence.*;
 import java.util.Date;
@@ -27,6 +25,7 @@ public class Compte {
     private TypeCompte type;
 
     @ManyToOne
-    @JoinColumn(name = "client_id")
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     private Client client;
 }

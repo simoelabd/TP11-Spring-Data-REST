@@ -1,9 +1,8 @@
 package ma.projet.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import jakarta.persistence.*;
+
 import java.util.List;
 
 @Entity
@@ -18,5 +17,7 @@ public class Client {
     private String email;
 
     @OneToMany(mappedBy = "client")
-    private List<Compte> comptes;
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    private List<Compte>comptes;
 }
